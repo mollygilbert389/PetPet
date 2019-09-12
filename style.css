@@ -1,0 +1,30 @@
+body {
+    text-align: center;
+    justify-content: center;
+    background-image: url("dogs.jpg")
+}
+
+button {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: rgb(22, 135, 187);
+    color: white;
+    border: none;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+#petPlace {
+    border-radius: 8px;
+    background-color: rgba(22, 135, 187, 0.719);
+    color: white;
+    padding: 10px;
+    margin-right: 10%;
+    margin-left: 10%;
+}
+
+.imageSize {
+    height: 300px;
+    width: 300px;
+    border-radius: 8px;
+}

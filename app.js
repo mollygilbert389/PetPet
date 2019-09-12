@@ -1,6 +1,8 @@
 $(document).ready(function(){
+    // $("#petPlace").hide()
 
     $("#btn").on("click", function(){
+        // $("#petPlace").show()
 
     var pf = new petfinder.Client({apiKey: "CQ4Lro9iMtqRrtgGFhehOTEdzq9qU6fVLx50myqbHKwnLAzPhf", secret: "F9xkBBNdKw1k6fw2ztLM0Zm7KNi0BXSXPN1fuP6d"});
 
@@ -11,18 +13,22 @@ $(document).ready(function(){
 
         let petName = animal.name
         let petAge = animal.age
-        let petBreed = animal.breeds
-        // let description = animal.description
-        // let gender = animal.environement.gender
-        // let image = animal.photos[0]
+        let petBreed = animal.breeds.primary
+        let description = animal.description
+        let gender = animal.gender
+        let dogImage = animal.photos[0].full
 
-        let newHOne = $("<h1>")
-        let newP = $("<p>")
-        newP.append(petAge)
-        newHOne.append(petName)
-        $("#petGoesHere").append(newHOne)
-        $("#petGoesHere").append("Age:" + newP)
+        $("#name").text(petName)
+        $("#age").text("Age: " + petAge)
+        $("#gender").append(gender)
+        $("#breed").text(petBreed)
+        $("#description").text(description)
 
+        let newImage = $("<img>");
+        newImage.attr("src", dogImage)
+        newImage.addClass("imageSize")
+
+        $("#dogImage").append(newImage);
 
     })
     .catch(function (error) {
